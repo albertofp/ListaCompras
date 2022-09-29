@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/fragmentLista">
+
+    <fragment
+        android:id="@+id/fragmentAdd"
+        android:name="br.infnet.edu.listadecompras.fragmentAdd"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_fragmentAdd_to_fragmentLista"
+            app:destination="@id/fragmentLista" />
+        <action
+            android:id="@+id/action_fragmentAdd_to_fragmentSobre"
+            app:destination="@id/fragmentSobre" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSobre"
+        android:name="br.infnet.edu.listadecompras.fragmentSobre"
+        android:label="fragment_sobre"
+        tools:layout="@layout/fragment_sobre" >
+        <action
+            android:id="@+id/action_fragmentSobre_to_fragmentLista"
+            app:destination="@id/fragmentLista" />
+        <action
+            android:id="@+id/action_fragmentSobre_to_fragmentAdd"
+            app:destination="@id/fragmentAdd" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentLista"
+        android:name="br.infnet.edu.listadecompras.fragmentLista"
+        android:label="fragment_lista"
+        tools:layout="@layout/fragment_lista" >
+        <action
+            android:id="@+id/action_fragmentLista_to_fragmentSobre"
+            app:destination="@id/fragmentSobre" />
+        <action
+            android:id="@+id/action_fragmentLista_to_fragmentAdd"
+            app:destination="@id/fragmentAdd" />
+    </fragment>
+</navigation>

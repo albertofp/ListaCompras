@@ -8,6 +8,12 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import br.infnet.edu.listadecompras.databinding.FragmentAddBinding
 
+/*
+*  TODO salvar input campu quantidade
+*  TODO salvar input campo nome
+*  TODO funcionalidade botao adicionar
+*  TODO navegacao
+* */
 class fragmentAdd : Fragment() {
 
     private var _binding: FragmentAddBinding? = null
@@ -28,6 +34,7 @@ class fragmentAdd : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
     }
 
     override fun onDestroyView() {
