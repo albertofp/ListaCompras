@@ -3,42 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_navigation"
-    app:startDestination="@id/fragmentLista">
+    app:startDestination="@id/addDest">
 
     <fragment
-        android:id="@+id/fragmentAdd"
+        android:id="@+id/addDest"
         android:name="br.infnet.edu.listadecompras.fragmentAdd"
         android:label="fragment_add"
         tools:layout="@layout/fragment_add" >
         <action
             android:id="@+id/action_fragmentAdd_to_fragmentLista"
-            app:destination="@id/fragmentLista" />
+            app:destination="@id/listDest" />
         <action
             android:id="@+id/action_fragmentAdd_to_fragmentSobre"
-            app:destination="@id/fragmentSobre" />
+            app:destination="@id/sobreDest" />
     </fragment>
     <fragment
-        android:id="@+id/fragmentSobre"
+        android:id="@+id/sobreDest"
         android:name="br.infnet.edu.listadecompras.fragmentSobre"
         android:label="fragment_sobre"
         tools:layout="@layout/fragment_sobre" >
         <action
             android:id="@+id/action_fragmentSobre_to_fragmentLista"
-            app:destination="@id/fragmentLista" />
+            app:destination="@id/listDest" />
         <action
             android:id="@+id/action_fragmentSobre_to_fragmentAdd"
-            app:destination="@id/fragmentAdd" />
+            app:destination="@id/addDest" />
     </fragment>
     <fragment
-        android:id="@+id/fragmentLista"
+        android:id="@+id/listDest"
         android:name="br.infnet.edu.listadecompras.fragmentLista"
         android:label="fragment_lista"
         tools:layout="@layout/fragment_lista" >
         <action
             android:id="@+id/action_fragmentLista_to_fragmentSobre"
-            app:destination="@id/fragmentSobre" />
+            app:destination="@id/sobreDest" />
         <action
             android:id="@+id/action_fragmentLista_to_fragmentAdd"
-            app:destination="@id/fragmentAdd" />
+            app:destination="@id/addDest" />
     </fragment>
 </navigation>
