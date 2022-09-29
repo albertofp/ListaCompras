@@ -1,18 +1,20 @@
 package br.infnet.edu.listadecompras
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
+import android.widget.Toast
 import br.infnet.edu.listadecompras.databinding.FragmentAddBinding
+import br.infnet.edu.listadecompras.model.ItemCompra
+import br.infnet.edu.listadecompras.model.ListaCompra
 
 /*
 *  TODO salvar input campu quantidade
 *  TODO salvar input campo nome
 *  TODO funcionalidade botao adicionar
-*  TODO navegacao
 * */
 class fragmentAdd : Fragment() {
 
@@ -28,6 +30,25 @@ class fragmentAdd : Fragment() {
     ): View? {
 
         _binding = FragmentAddBinding.inflate(inflater, container, false)
+
+
+        //homeViewModel.text.observe(viewLifecycleOwner)
+
+        binding.newItemName.setOnFocusChangeListener{
+            _ , hasFocus ->
+            if(hasFocus){
+                binding.newItemName.setText("")
+            }
+        }
+
+        binding.newItemNumber.setOnFocusChangeListener{
+                _ , hasFocus ->
+            if(hasFocus){
+                binding.newItemNumber.setText("")
+            }
+        }
+        val btnAdd = binding.btnAdd
+        btnAdd.setOnClickListener{addItem()}
         return binding.root
 
     }
@@ -41,4 +62,16 @@ class fragmentAdd : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    fun addItem(){
+
+        //Cria nova instancia de ItemCompra referente a novo item
+
+        val NovoItem = ItemCompra(binding.newItemName.text , binding.newItemNumber.text)
+
+        Toast.makeText(view?.context ,"newItemNumber = ${binding.newItemNumber.text}", Toast.LENGTH_SHORT).show()
+        Log.d("addItem()", "addItem() called on button press")
+
+    }
+
 }
