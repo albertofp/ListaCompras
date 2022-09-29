@@ -14,6 +14,12 @@
         <action
             android:id="@+id/action_FragmentLista_to_FragmentAdd"
             app:destination="@id/add_dest" />
+        <action
+            android:id="@+id/action_list_dest_to_sobre_dest"
+            app:destination="@id/sobre_dest" />
+        <action
+            android:id="@+id/action_list_dest_to_sobre_dest2"
+            app:destination="@id/sobre_dest" />
     </fragment>
     <fragment
         android:id="@+id/add_dest"
@@ -24,10 +30,20 @@
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/list_dest" />
+        <action
+            android:id="@+id/action_add_dest_to_sobre_dest"
+            app:destination="@id/sobre_dest" />
     </fragment>
     <fragment
         android:id="@+id/sobre_dest"
         android:name="br.infnet.edu.listadecompras.fragmentSobre"
         android:label="fragment_sobre"
-        tools:layout="@layout/fragment_sobre" />
+        tools:layout="@layout/fragment_sobre" >
+        <action
+            android:id="@+id/action_sobre_dest_to_add_dest"
+            app:destination="@id/add_dest" />
+        <action
+            android:id="@+id/action_sobre_dest_to_list_dest"
+            app:destination="@id/list_dest" />
+    </fragment>
 </navigation>
