@@ -10,7 +10,7 @@
         android:icon="@android:drawable/ic_menu_sort_by_size"
         android:title="Exibir Lista" />
     <item
-        android:id="@+id/sobreest"
+        android:id="@+id/sobreDest"
         android:icon="@android:drawable/ic_dialog_info"
         android:title="Sobre" />
 </menu>
