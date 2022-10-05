@@ -4,7 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="greeting">Oi, bem-vindo ao aplicativo de Lista de Compras!</string>
     <string name="title_activity_home">activityHome</string>
-    <string name="textSobre">Desenvolvido por Alberto Fontenelle Pluecker</string>
+    <string name="textSobre">Por: Alberto F. Pluecker</string>
     <string name="textnovoitem">Novo Item</string>
     <string name="textnovoitemQuant">Quantidade</string>
     <string name="githublink">https://github.com/albertofp</string>

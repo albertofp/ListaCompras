@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="104dp"
             android:text="@string/textSobre"
+            android:textAlignment="center"
             android:textColor="@color/primary"
             android:textSize="34sp"
             app:layout_constraintEnd_toEndOf="parent"
