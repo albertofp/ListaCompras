@@ -1,5 +1,7 @@
 package br.infnet.edu.listadecompras
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -23,6 +25,12 @@ class fragmentSobre : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSobreBinding.inflate(inflater, container, false)
+
+        //Adiciona o Implicit Intent para abrir o link do Github ao clickar no botao
+        binding.btnGithub.setOnClickListener(View.OnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/albertofp"))
+            startActivity(intent)
+        })
         return binding.root
     }
 

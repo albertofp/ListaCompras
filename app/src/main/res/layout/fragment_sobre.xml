@@ -4,23 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".fragmentSobre">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:background="@color/purple_dark"
         android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/textSobre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="176dp"
+            android:layout_marginTop="104dp"
             android:text="@string/textSobre"
+            android:textColor="@color/primary"
             android:textSize="34sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnGithub"
+            android:layout_width="99dp"
+            android:layout_height="80dp"
+            android:background="@drawable/round_outline"
+            android:backgroundTint="@color/secondary"
+            android:src="@drawable/ic_github_svgrepo_com"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textSobre"
+            app:layout_constraintVertical_bias="0.406" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

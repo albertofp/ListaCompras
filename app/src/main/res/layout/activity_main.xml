@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
     <TextView
@@ -11,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="196dp"
+        android:textColor="@color/primary"
         android:text="@string/greeting"
         android:textAlignment="center"
         android:textSize="34sp"
@@ -23,7 +25,9 @@
         android:id="@+id/btnIniciar"
         android:layout_width="224dp"
         android:layout_height="62dp"
+        android:textColor="@color/primary"
         android:text="INICIAR"
+        android:backgroundTint="@color/secondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

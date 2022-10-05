@@ -7,18 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import br.infnet.edu.listadecompras.databinding.FragmentAddBinding
 import br.infnet.edu.listadecompras.model.ItemCompra
-import br.infnet.edu.listadecompras.model.ListaCompra
+import br.infnet.edu.listadecompras.model.ItemsViewModel
 
-/*
-*  TODO salvar input campu quantidade
-*  TODO salvar input campo nome
-*  TODO funcionalidade botao adicionar
-* */
 class fragmentAdd : Fragment() {
-
     private var _binding: FragmentAddBinding? = null
+    private lateinit var viewModel: ItemsViewModel
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -30,9 +26,6 @@ class fragmentAdd : Fragment() {
     ): View? {
 
         _binding = FragmentAddBinding.inflate(inflater, container, false)
-
-
-        //homeViewModel.text.observe(viewLifecycleOwner)
 
         binding.newItemName.setOnFocusChangeListener{
             _ , hasFocus ->
@@ -64,13 +57,12 @@ class fragmentAdd : Fragment() {
     }
 
     fun addItem(){
-
-        //Cria nova instancia de ItemCompra referente a novo item
-
         val NovoItem = ItemCompra(binding.newItemName.text , binding.newItemNumber.text)
-
-        Toast.makeText(view?.context ,"newItemNumber = ${binding.newItemNumber.text}", Toast.LENGTH_SHORT).show()
+        viewModel = ViewModelProvider(this).get(ItemsViewModel::class.java)
+        viewModel.lista.addItem(NovoItem)
+        //Toast.makeText(view?.context ,"newItemNumber = ${binding.newItemNumber.text}", Toast.LENGTH_SHORT).show()
         Log.d("addItem()", "addItem() called on button press")
+        Log.d("lista items", "teste")
 
     }
 

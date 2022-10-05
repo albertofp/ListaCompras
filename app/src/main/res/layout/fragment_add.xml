@@ -5,6 +5,7 @@
 
 
     android:id="@+id/coordinatorLayout"
+    android:background="@color/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -22,11 +23,13 @@
 
             <ImageButton
                 android:id="@+id/btnAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="64dp"
+                android:layout_width="116dp"
+                android:layout_height="73dp"
+                android:layout_marginTop="48dp"
+                android:background="@drawable/round_outline"
                 android:src="@android:drawable/ic_menu_add"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/newItemNumber" />
 
@@ -35,6 +38,7 @@
                 android:layout_width="277dp"
                 android:layout_height="51dp"
                 android:layout_marginTop="244dp"
+                android:textColor="@color/primary"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="@string/textnovoitem"
@@ -48,6 +52,7 @@
                 android:layout_width="145dp"
                 android:layout_height="58dp"
                 android:layout_marginTop="24dp"
+                android:textColor="@color/primary"
                 android:ems="10"
                 android:inputType="number"
                 android:text="@string/textnovoitemQuant"
