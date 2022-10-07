@@ -53,11 +53,11 @@ class fragmentAdd : Fragment() {
                 val NovoItem = ItemCompra(binding.newItemName.text.toString() , binding.newItemNumber.text.toString())
                 viewModel.addItem(NovoItem)
                 makeToast("Item adicionado com sucesso")
+                Log.d("item added","item added to items list")
+                Log.d("item added",viewModel.exposeItems().toString())
 
                 binding.newItemName.setText("")
                 binding.newItemNumber.setText("")
-                //Toast.makeText(view?.context ,"newItemNumber = ${binding.newItemNumber.text}", Toast.LENGTH_SHORT).show()
-                Log.d("addItem()", "addItem() called on button press")
             }
         }
         return binding.root

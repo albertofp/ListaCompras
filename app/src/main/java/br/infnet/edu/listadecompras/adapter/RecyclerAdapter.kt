@@ -3,38 +3,35 @@ package br.infnet.edu.listadecompras.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
 import android.widget.TextView
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import br.infnet.edu.listadecompras.R
+import br.infnet.edu.listadecompras.databinding.FragmentAddBinding
 import br.infnet.edu.listadecompras.model.ItemCompra
 import br.infnet.edu.listadecompras.model.ItemsViewModel
-/*
-    class RecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-        private lateinit var viewModel: ItemsViewModel
-        private var items:List<ItemCompra> = ArrayList()
+    class RecyclerAdapter(private val _itemsList: List<ItemCompra>) : RecyclerView.Adapter<RecyclerAdapter.ItemViewHolder>() {
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.recycler_list, parent,false)
-            return ViewHolder(v)
+        inner class ItemViewHolder(itemView : View):
+            RecyclerView.ViewHolder(itemView){
+            val nomeTextView: TextView = itemView.findViewById(R.id.itemNome)
+            val nomeTextNumber: TextView = itemView.findViewById(R.id.itemQuant)
+        }
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+            val itemView = LayoutInflater.
+                            from(parent.context).
+                            inflate(R.layout.list_item,parent,false)
+            return ItemViewHolder(itemView)
         }
 
-        override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
-            holder.itemName.text = items[position].nome.toString()
-            holder.itemQuant.text = items[position].quant.toString()
+        override fun onBindViewHolder(holder: RecyclerAdapter.ItemViewHolder, position: Int) {
+            holder.nomeTextView.text = _itemsList[position].nome
+            holder.nomeTextNumber.text = _itemsList[position].quant
         }
 
         override fun getItemCount(): Int {
-            return items.size
+            return _itemsList.size
         }
 
-        inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-            var itemName:TextView
-            var itemQuant:TextView
-
-            init {
-                itemName = itemView.findViewById(R.id.itemNome)
-                itemQuant = itemView.findViewById(R.id.itemQuant)
-            }
-        }
     }
-*/
