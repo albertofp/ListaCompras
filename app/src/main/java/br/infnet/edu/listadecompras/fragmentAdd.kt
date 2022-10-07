@@ -45,16 +45,19 @@ class fragmentAdd : Fragment() {
         // Adicionar funcionalidade de adicionar novo item a lista ao clicar no botao de "+"
         val btnAdd = binding.btnAdd
         btnAdd.setOnClickListener{
-            
+
+            // Nao tenta adicionar item a lista se um dos campos esta em branco
             if(binding.newItemName.text.isEmpty() || binding.newItemNumber.text.isEmpty()){
                makeToast("Erro: campo em branco")
+                Log.d("error:empty field","Did not add item (empty field)")
             }
             else{
-                val NovoItem = ItemCompra(binding.newItemName.text.toString() , binding.newItemNumber.text.toString())
+                val NovoItem = ItemCompra(binding.newItemName.text.toString() ,
+                                            binding.newItemNumber.text.toString())
                 viewModel.addItem(NovoItem)
                 makeToast("Item adicionado com sucesso")
-                Log.d("item added","item added to items list")
-                Log.d("item added",viewModel.exposeItems().toString())
+                Log.d("item added","$NovoItem added to items list")
+                Log.d("item list",viewModel.exposeItems().toString())
 
                 binding.newItemName.setText("")
                 binding.newItemNumber.setText("")

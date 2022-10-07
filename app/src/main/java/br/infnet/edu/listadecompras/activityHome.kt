@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import br.infnet.edu.listadecompras.databinding.ActivityHomeBinding
 import br.infnet.edu.listadecompras.model.ItemsViewModel
@@ -15,7 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class activityHome : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
+    //private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityHomeBinding
 
     private lateinit var viewModel:ItemsViewModel

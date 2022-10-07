@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.infnet.edu.listadecompras.adapter.RecyclerAdapter
@@ -19,16 +20,16 @@ class fragmentLista : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private val binding get() = _binding!!
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentListaBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(this).get(ItemsViewModel::class.java)
-        recyclerView = binding.recyclerView
+        _binding    = FragmentListaBinding.inflate(inflater, container, false)
+        viewModel   = ViewModelProvider(this)[ItemsViewModel::class.java]
+        recyclerView= binding.recyclerView
 
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,9 +43,10 @@ class fragmentLista : Fragment() {
     }
 
     private fun configureRecyclerView(){
-        val itemslist = viewModel.exposeItems()
-        recyclerView.layoutManager =
-            LinearLayoutManager(activity)
-        recyclerView.adapter = RecyclerAdapter(itemslist)
+        val itemslist               = viewModel.exposeItems()
+        recyclerView.layoutManager  = LinearLayoutManager(activity)
+        recyclerView.adapter        = RecyclerAdapter(itemslist)
+        recyclerView.addItemDecoration(
+            DividerItemDecoration(activity,DividerItemDecoration.VERTICAL))
     }
 }
