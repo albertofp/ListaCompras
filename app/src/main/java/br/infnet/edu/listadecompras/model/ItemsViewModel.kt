@@ -4,14 +4,19 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class ItemsViewModel():ViewModel() {
-    var lista = ListaCompra()
-    /*
-        var lista = MutableLiveData<ListaCompra>()
-        init {
-            lista.value= ListaCompra()
-        }
-        fun updateLiveData(){
 
-        }
-    */
-}
+    private val _listaItems = mutableListOf<ItemCompra>()
+
+    fun exposeItems(): MutableList<ItemCompra> {
+        return _listaItems
+    }
+
+    fun addItem(newItem : ItemCompra){
+        _listaItems.add(newItem)
+    }
+
+    fun delItem(item: ItemCompra){
+        _listaItems.remove(item)
+    }
+
+    }

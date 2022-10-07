@@ -26,6 +26,7 @@ class fragmentAdd : Fragment() {
     ): View? {
 
         _binding = FragmentAddBinding.inflate(inflater, container, false)
+        viewModel = ViewModelProvider(this).get(ItemsViewModel::class.java)
 
         binding.newItemName.setOnFocusChangeListener{
             _ , hasFocus ->
@@ -40,8 +41,25 @@ class fragmentAdd : Fragment() {
                 binding.newItemNumber.setText("")
             }
         }
+
+        // Adicionar funcionalidade de adicionar novo item a lista ao clicar no botao de "+"
         val btnAdd = binding.btnAdd
-        btnAdd.setOnClickListener{addItem()}
+        btnAdd.setOnClickListener{
+            
+            if(binding.newItemName.text.isEmpty() || binding.newItemNumber.text.isEmpty()){
+               makeToast("Erro: campo em branco")
+            }
+            else{
+                val NovoItem = ItemCompra(binding.newItemName.text.toString() , binding.newItemNumber.text.toString())
+                viewModel.addItem(NovoItem)
+                makeToast("Item adicionado com sucesso")
+
+                binding.newItemName.setText("")
+                binding.newItemNumber.setText("")
+                //Toast.makeText(view?.context ,"newItemNumber = ${binding.newItemNumber.text}", Toast.LENGTH_SHORT).show()
+                Log.d("addItem()", "addItem() called on button press")
+            }
+        }
         return binding.root
 
     }
@@ -56,14 +74,9 @@ class fragmentAdd : Fragment() {
         _binding = null
     }
 
-    fun addItem(){
-        val NovoItem = ItemCompra(binding.newItemName.text , binding.newItemNumber.text)
-        viewModel = ViewModelProvider(this).get(ItemsViewModel::class.java)
-        viewModel.lista.addItem(NovoItem)
-        //Toast.makeText(view?.context ,"newItemNumber = ${binding.newItemNumber.text}", Toast.LENGTH_SHORT).show()
-        Log.d("addItem()", "addItem() called on button press")
-        Log.d("lista items", "teste")
-
+    fun Fragment.makeToast(text: String,duration: Int = Toast.LENGTH_LONG) {
+        activity?.let {
+            Toast.makeText(it, text, duration).show()
+        }
     }
-
 }

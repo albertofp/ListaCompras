@@ -21,7 +21,7 @@ class activityHome : AppCompatActivity() {
     private lateinit var viewModel:ItemsViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-            viewModel = ViewModelProvider(this).get(ItemsViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ItemsViewModel::class.java)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

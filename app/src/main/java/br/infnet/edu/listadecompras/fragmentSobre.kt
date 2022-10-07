@@ -36,6 +36,7 @@ class fragmentSobre : Fragment() {
 
             //Try-catch deve abrir o link no brower, e, caso nao encontre um,
             // exibir abrir a escolha de aplicativo
+            //TODO resolveActivity() para o link para Github, idealmente
             try{
                 startActivity(webIntent)
             }catch(e:ActivityNotFoundException){
