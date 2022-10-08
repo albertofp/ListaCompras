@@ -16,7 +16,7 @@
             android:id="@+id/textSobre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="104dp"
+            android:layout_marginTop="180dp"
             android:text="@string/textSobre"
             android:textAlignment="center"
             android:textColor="@color/primary"
@@ -30,6 +30,7 @@
             android:id="@+id/btnGithub"
             android:layout_width="99dp"
             android:layout_height="80dp"
+            android:layout_marginTop="128dp"
             android:background="@drawable/round_outline"
             android:backgroundTint="@color/secondary"
             android:src="@drawable/ic_github_svgrepo_com"
@@ -37,7 +38,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textSobre"
-            app:layout_constraintVertical_bias="0.406" />
+            app:layout_constraintVertical_bias="0.402" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

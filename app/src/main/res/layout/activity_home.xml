@@ -15,13 +15,27 @@
             android:id="@+id/navHostContainer"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="128dp"
+            android:layout_height="612dp"
             app:defaultNavHost="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/home_navigation" />
+
+        <TextView
+            android:id="@+id/totalItemCounter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_dark"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/purple_light"
+            android:textSize="24dp"
             app:layout_constraintBottom_toTopOf="@+id/navbar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:navGraph="@navigation/home_navigation" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/navbar"
@@ -31,5 +45,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:menu="@menu/bottom_menu" />
+
+        <TextView
+            android:id="@+id/itemCounterText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total de itens na lista:"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textColor="@color/purple_light"
+            android:background="@color/purple_dark"
+            app:layout_constraintBottom_toTopOf="@+id/totalItemCounter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/navHostContainer" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

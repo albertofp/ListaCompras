@@ -33,11 +33,7 @@ class fragmentLista : Fragment() {
         recyclerView= binding.recyclerView
         configureRecyclerView()
         Log.d("fragmentLista","onCreateView() called")
-
-        //return binding.root
-
-        //Opcao abaixo gera erro: "RecyclerView: No adapter attached; skipping layout"
-        return inflater.inflate(R.layout.fragment_lista,container,false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -28,11 +28,10 @@ class fragmentSobre : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSobreBinding.inflate(inflater, container, false)
-
         //Adiciona o Implicit Intent para abrir o link do Github ao clickar no botao
         binding.btnGithub.setOnClickListener(View.OnClickListener {
             val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://git" +
-                    "hub.com/albertofp"))
+                    "hub.com/albertofp/ListaCompras"))
 
             //Try-catch deve abrir o link no brower, e, caso nao encontre um,
             // exibir abrir a escolha de aplicativo
@@ -47,6 +46,7 @@ class fragmentSobre : Fragment() {
             }
 
         })
+        (activity as activityHome).toggleCounter()
         return binding.root
     }
 
@@ -56,6 +56,7 @@ class fragmentSobre : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        (activity as activityHome).toggleCounter()
         _binding = null
     }
 
