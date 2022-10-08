@@ -10,6 +10,8 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.recyclerview.widget.RecyclerView
+import br.infnet.edu.listadecompras.adapter.RecyclerAdapter
 import br.infnet.edu.listadecompras.databinding.ActivityHomeBinding
 import br.infnet.edu.listadecompras.model.ItemsViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -26,16 +28,17 @@ class activityHome : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         val navBar:BottomNavigationView = binding.navbar
         //val navBar = findViewById<BottomNavigationView>(R.id.navbar)
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostContainer)
             as NavHostFragment
         val navController = navHostFragment.navController
         navBar.setupWithNavController(navController)
-        val appBarConfiguration = AppBarConfiguration(setOf(
+        /*val appBarConfiguration = AppBarConfiguration(setOf(
             R.id.addDest,
             R.id.listDest,
-            R.id.sobreDest))
-        //setupActionBarWithNavController(navController,appBarConfiguration)
+            R.id.sobreDest))*/
+        //setupActionBarWithNavController(navController)
         Log.i("HomeActivity", "Called ViewModelProvider.get")
 }}

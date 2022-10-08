@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import br.infnet.edu.listadecompras.databinding.FragmentAddBinding
 import br.infnet.edu.listadecompras.model.ItemCompra
@@ -14,7 +15,7 @@ import br.infnet.edu.listadecompras.model.ItemsViewModel
 
 class fragmentAdd : Fragment() {
     private var _binding: FragmentAddBinding? = null
-    private lateinit var viewModel: ItemsViewModel
+    private val viewModel: ItemsViewModel by activityViewModels()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -24,9 +25,9 @@ class fragmentAdd : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        Log.d("fragmAdd.onCreateView()","called")
         _binding = FragmentAddBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(this).get(ItemsViewModel::class.java)
+       // viewModel = ViewModelProvider(this).get(ItemsViewModel::class.java)
 
         binding.newItemName.setOnFocusChangeListener{
             _ , hasFocus ->
@@ -48,7 +49,7 @@ class fragmentAdd : Fragment() {
 
             // Nao tenta adicionar item a lista se um dos campos esta em branco
             if(binding.newItemName.text.isEmpty() || binding.newItemNumber.text.isEmpty()){
-               makeToast("Erro: campo em branco")
+               makeToast("Erro: campo(s) em branco")
                 Log.d("error:empty field","Did not add item (empty field)")
             }
             else{
@@ -69,7 +70,6 @@ class fragmentAdd : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
     }
 
     override fun onDestroyView() {
@@ -77,7 +77,7 @@ class fragmentAdd : Fragment() {
         _binding = null
     }
 
-    fun Fragment.makeToast(text: String,duration: Int = Toast.LENGTH_LONG) {
+    private fun Fragment.makeToast(text: String,duration: Int = Toast.LENGTH_LONG) {
         activity?.let {
             Toast.makeText(it, text, duration).show()
         }

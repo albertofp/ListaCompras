@@ -5,8 +5,10 @@ import androidx.lifecycle.ViewModel
 
 class ItemsViewModel():ViewModel() {
 
-    private val _listaItems = mutableListOf<ItemCompra>()
+    private var _listaItems = mutableListOf<ItemCompra>()
 
+
+    // Retorna a variavel privada contento a lista dos itens
     fun exposeItems(): MutableList<ItemCompra> {
         return _listaItems
     }
