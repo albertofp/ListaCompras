@@ -6,22 +6,21 @@ import androidx.lifecycle.ViewModel
 
 class ItemsViewModel:ViewModel() {
 
-    private var _listaItems = mutableListOf<ItemCompra>()
-    private val _totalItems = MutableLiveData<Int>()
+        private var _listaItems = mutableListOf<ItemCompra>()
+        private val _totalItems = MutableLiveData<Int>()
 
-    fun totalItems():LiveData<Int>{return _totalItems}
+        fun totalItems():LiveData<Int>{return _totalItems}
 
-    fun exposeItems(): MutableList<ItemCompra> {return _listaItems}
+        fun exposeItems(): MutableList<ItemCompra> {return _listaItems}
 
-    fun addItem(newItem : ItemCompra){
-        _listaItems.add(newItem)
-        _totalItems.value=_listaItems.size
-    }
+        fun addItem(newItem : ItemCompra){
+            _listaItems.add(newItem)
+            _totalItems.value=_listaItems.size
+        }
 
-    //Para possivel uso futuro na implementacao de funcionalidades
-    /*fun delItem(item: ItemCompra){
-        _listaItems.remove(item)
-        _totalItems.value=_listaItems.size
-    }*/
+        fun delItem(item: ItemCompra){
+            _listaItems.remove(item)
+            _totalItems.value=_listaItems.size
+        }
 
     }

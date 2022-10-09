@@ -47,8 +47,12 @@ class FragmentLista : Fragment() {
     private fun configureRecyclerView(){
         Log.d("configureRecyclerView()","${viewModel.exposeItems().size}")
         recyclerView.layoutManager  = LinearLayoutManager(activity)
-        recyclerView.adapter        = RecyclerAdapter(viewModel.exposeItems())
+        recyclerView.adapter        = RecyclerAdapter(viewModel.exposeItems()){position -> onListItemClick(position)}
         recyclerView.addItemDecoration(
             DividerItemDecoration(activity,DividerItemDecoration.VERTICAL))
+    }
+
+    private fun onListItemClick(position:Int){
+        viewModel.delItem(viewModel.exposeItems()[position])
     }
 }
