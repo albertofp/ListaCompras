@@ -1,6 +1,5 @@
 package br.infnet.edu.listadecompras
 
-import android.app.Notification
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
@@ -12,7 +11,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import br.infnet.edu.listadecompras.databinding.FragmentSobreBinding
 
-class fragmentSobre : Fragment() {
+class FragmentSobre : Fragment() {
 
     private var _binding: FragmentSobreBinding? = null
 
@@ -28,25 +27,33 @@ class fragmentSobre : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSobreBinding.inflate(inflater, container, false)
-        //Adiciona o Implicit Intent para abrir o link do Github ao clickar no botao
-        binding.btnGithub.setOnClickListener(View.OnClickListener {
-            val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://git" +
-                    "hub.com/albertofp/ListaCompras"))
+        //Adiciona o Implicit Intent para abrir o link do Github ao clicar no botao
+        binding.btnGithub.setOnClickListener {
+            val webIntent = Intent(
+                Intent.ACTION_VIEW, Uri.parse(
+                    "https://git" +
+                            "hub.com/albertofp/ListaCompras"
+                )
+            )
 
             //Try-catch deve abrir o link no brower, e, caso nao encontre um,
             // exibir abrir a escolha de aplicativo
-            //TODO resolveActivity() para o link para Github, idealmente
-            try{
+            try {
                 startActivity(webIntent)
-            }catch(e:ActivityNotFoundException){
+            } catch (e: ActivityNotFoundException) {
                 //makeToast("No browser found")
                 val chooserIntent =
-                    Intent(Intent.createChooser(webIntent,"Escolha um aplicativo para abrir o link:"))
+                    Intent(
+                        Intent.createChooser(
+                            webIntent,
+                            "Escolha um aplicativo para abrir o link:"
+                        )
+                    )
                 startActivity(chooserIntent)
             }
 
-        })
-        (activity as activityHome).toggleCounter()
+        }
+        (activity as ActivityHome).toggleCounter()
         return binding.root
     }
 
@@ -56,7 +63,7 @@ class fragmentSobre : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        (activity as activityHome).toggleCounter()
+        (activity as ActivityHome).toggleCounter()
         _binding = null
     }
 

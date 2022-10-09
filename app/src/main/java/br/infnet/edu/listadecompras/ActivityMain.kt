@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.View
 import br.infnet.edu.listadecompras.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class ActivityMain : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val btnIniciar = findViewById<View>(R.id.btnIniciar)
         btnIniciar.setOnClickListener {
-            val homeIntent = Intent(this, activityHome::class.java)
+            val homeIntent = Intent(this, ActivityHome::class.java)
             startActivity(homeIntent)
         }
     }

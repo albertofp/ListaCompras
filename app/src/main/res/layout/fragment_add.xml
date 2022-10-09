@@ -19,7 +19,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".fragmentAdd">
+            tools:context=".FragmentAdd">
 
             <ImageButton
                 android:id="@+id/btnAdd"
@@ -31,7 +31,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/newItemNumber" />
+                app:layout_constraintTop_toBottomOf="@+id/newItemNumber"
+                android:contentDescription="Plus sign" />
 
             <EditText
                 android:id="@+id/newItemName"
@@ -45,7 +46,8 @@
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:autofillHints="Name" />
 
             <EditText
                 android:id="@+id/newItemNumber"
@@ -59,7 +61,8 @@
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/newItemName" />
+                app:layout_constraintTop_toBottomOf="@+id/newItemName"
+                android:autofillHints="Number" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

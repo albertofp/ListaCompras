@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".fragmentSobre">
+    tools:context=".FragmentSobre">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -38,7 +38,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textSobre"
-            app:layout_constraintVertical_bias="0.402" />
+            app:layout_constraintVertical_bias="0.402"
+            android:contentDescription="Github Icon" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

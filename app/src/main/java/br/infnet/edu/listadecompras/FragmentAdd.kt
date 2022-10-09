@@ -8,12 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import br.infnet.edu.listadecompras.databinding.FragmentAddBinding
 import br.infnet.edu.listadecompras.model.ItemCompra
 import br.infnet.edu.listadecompras.model.ItemsViewModel
 
-class fragmentAdd : Fragment() {
+class FragmentAdd : Fragment() {
     private var _binding: FragmentAddBinding? = null
     private val viewModel: ItemsViewModel by activityViewModels()
 
@@ -24,7 +23,7 @@ class fragmentAdd : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         Log.d("fragmAdd.onCreateView()","called")
         _binding = FragmentAddBinding.inflate(inflater, container, false)
        // viewModel = ViewModelProvider(this).get(ItemsViewModel::class.java)
@@ -53,11 +52,11 @@ class fragmentAdd : Fragment() {
                 Log.d("error:empty field","Did not add item (empty field)")
             }
             else{
-                val NovoItem = ItemCompra(binding.newItemName.text.toString() ,
+                val novoItem = ItemCompra(binding.newItemName.text.toString() ,
                                             binding.newItemNumber.text.toString())
-                viewModel.addItem(NovoItem)
+                viewModel.addItem(novoItem)
                 makeToast("Item adicionado com sucesso")
-                Log.d("item added","$NovoItem added to items list")
+                Log.d("item added","$novoItem added to items list")
                 Log.d("item list",viewModel.exposeItems().toString())
 
                 binding.newItemName.setText("")

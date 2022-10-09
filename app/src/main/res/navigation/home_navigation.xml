@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/addDest"
-        android:name="br.infnet.edu.listadecompras.fragmentAdd"
+        android:name="br.infnet.edu.listadecompras.FragmentAdd"
         android:label="fragment_add"
         tools:layout="@layout/fragment_add" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/sobreDest"
-        android:name="br.infnet.edu.listadecompras.fragmentSobre"
+        android:name="br.infnet.edu.listadecompras.FragmentSobre"
         android:label="fragment_sobre"
         tools:layout="@layout/fragment_sobre" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/listDest"
-        android:name="br.infnet.edu.listadecompras.fragmentLista"
+        android:name="br.infnet.edu.listadecompras.FragmentLista"
         android:label="fragment_lista"
         tools:layout="@layout/fragment_lista" >
         <action
