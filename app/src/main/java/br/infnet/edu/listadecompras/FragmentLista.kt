@@ -28,6 +28,7 @@ class FragmentLista : Fragment() {
     ): View {
         _binding    = FragmentListaBinding.inflate(inflater, container, false)
         recyclerView= binding.recyclerView
+        activity?.title = "Lista"
         configureRecyclerView()
         Log.d("FragmentLista","onCreateView() called")
         return binding.root

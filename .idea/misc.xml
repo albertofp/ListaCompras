@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-anydpi/ic_closeApp.xml" value="0.3515" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_emptyList.xml" value="0.3515" />
+        <entry key="app/src/main/res/drawable/ic_deleteList_background.xml" value="0.186" />
+        <entry key="app/src/main/res/drawable/ic_deleteList_foreground.xml" value="0.3515" />
+        <entry key="app/src/main/res/drawable/ic_github_svgrepo_com.xml" value="0.3515" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3515" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.35" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/content_activity_home.xml" value="0.35" />
@@ -16,6 +22,7 @@
         <entry key="app/src/main/res/layout/list_item.xml" value="0.4075425790754258" />
         <entry key="app/src/main/res/layout/recycler_list.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/layout/recycler_lista.xml" value="0.3489583333333333" />
+        <entry key="app/src/main/res/menu/app_bar_menu.xml" value="0.35" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.35" />
       </map>
     </option>

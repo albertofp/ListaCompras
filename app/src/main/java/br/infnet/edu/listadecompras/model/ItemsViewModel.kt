@@ -3,6 +3,7 @@ package br.infnet.edu.listadecompras.model
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import br.infnet.edu.listadecompras.adapter.RecyclerAdapter
 
 class ItemsViewModel:ViewModel() {
 
@@ -21,6 +22,15 @@ class ItemsViewModel:ViewModel() {
         fun delItem(item: ItemCompra){
             _listaItems.remove(item)
             _totalItems.value=_listaItems.size
+        }
+
+        fun emptyList(){
+            if(_listaItems.size > 0){
+                for(item in _listaItems){
+                    _listaItems.remove(item)
+                }
+                _totalItems.value=_listaItems.size
+            }
         }
 
     }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="Empty List"
+          android:id="@+id/emptyList"
+          android:icon="@drawable/ic_empty_list"
+          app:showAsAction="always"/>
+
+    <item android:title="Close App"
+          android:id="@+id/closeApp"
+          android:icon="@drawable/ic_close"
+          app:showAsAction="ifRoom"/>
+</menu>

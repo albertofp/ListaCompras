@@ -19,8 +19,11 @@
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.ListaDeCompras.NoActionBar" />
         <activity
+            android:theme="@style/Theme.ListaDeCompras.NoActionBar"
             android:name=".ActivityMain"
+            android:noHistory="true"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

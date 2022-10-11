@@ -27,7 +27,7 @@ class FragmentAdd : Fragment() {
         Log.d("fragmAdd.onCreateView()","called")
         _binding = FragmentAddBinding.inflate(inflater, container, false)
        // viewModel = ViewModelProvider(this).get(ItemsViewModel::class.java)
-
+        activity?.title = "Adicionar Item"
         binding.newItemName.setOnFocusChangeListener{
             _ , hasFocus ->
             if(hasFocus){

@@ -27,6 +27,7 @@ class FragmentSobre : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSobreBinding.inflate(inflater, container, false)
+        activity?.title = "Sobre"
         //Adiciona o Implicit Intent para abrir o link do Github ao clicar no botao
         binding.btnGithub.setOnClickListener {
             val webIntent = Intent(
