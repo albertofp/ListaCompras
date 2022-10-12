@@ -22,7 +22,7 @@ class ActivityHome : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
 
-    private lateinit var viewModel:ItemsViewModel
+    private lateinit var viewModel: ItemsViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this)[ItemsViewModel::class.java]
@@ -35,13 +35,13 @@ class ActivityHome : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val navBar:BottomNavigationView = binding.navbar
+        val navBar: BottomNavigationView = binding.navbar
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostContainer)
-            as NavHostFragment
+                as NavHostFragment
         val navController = navHostFragment.navController
         navBar.setupWithNavController(navController)
         Log.i("HomeActivity", "Called ViewModelProvider.get")
-}
+    }
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -50,30 +50,30 @@ class ActivityHome : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.emptyList  -> {
-                                    viewModel.emptyList()
-                                    Toast.makeText(this,"Lista de itens esvaziada",Toast.LENGTH_SHORT).show()
-                                }
-            R.id.closeApp   -> {
-                                    finishAndRemoveTask()
-                                }
+        when (item.itemId) {
+            R.id.emptyList -> {
+                viewModel.emptyList()
+                Toast.makeText(this, "Lista de itens esvaziada", Toast.LENGTH_SHORT).show()
+            }
+            R.id.closeApp -> {
+                finishAndRemoveTask()
+            }
         }
         return true
     }
+
     // Oculta/Expoe o contador de itens
     // Chamado ao criar e destruir a view do Fragment Sobre para que o contador nao esteja visivel
     // apenas naquela tela
-    fun toggleCounter(){
-        val counterText     = binding.itemCounterText
-        val totalItemCounter= binding.totalItemCounter
+    fun toggleCounter() {
+        val counterText = binding.itemCounterText
+        val totalItemCounter = binding.totalItemCounter
 
-        if(counterText.isVisible){
-            counterText.visibility      = INVISIBLE
+        if (counterText.isVisible) {
+            counterText.visibility = INVISIBLE
             totalItemCounter.visibility = INVISIBLE
-        }
-        else{
-            counterText.visibility      = VISIBLE
+        } else {
+            counterText.visibility = VISIBLE
             totalItemCounter.visibility = VISIBLE
         }
     }

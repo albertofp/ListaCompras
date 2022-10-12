@@ -7,7 +7,7 @@ import android.view.View
 import br.infnet.edu.listadecompras.databinding.ActivityMainBinding
 
 class ActivityMain : AppCompatActivity() {
-    private lateinit var binding : ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

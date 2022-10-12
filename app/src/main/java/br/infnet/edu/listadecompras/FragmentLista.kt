@@ -26,18 +26,18 @@ class FragmentLista : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding    = FragmentListaBinding.inflate(inflater, container, false)
-        recyclerView= binding.recyclerView
+        _binding = FragmentListaBinding.inflate(inflater, container, false)
+        recyclerView = binding.recyclerView
         activity?.title = "Lista"
         configureRecyclerView()
-        Log.d("FragmentLista","onCreateView() called")
+        Log.d("FragmentLista", "onCreateView() called")
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         configureRecyclerView()
-        Log.d("FragmentLista","onViewCreated() called")
+        Log.d("FragmentLista", "onViewCreated() called")
     }
 
     override fun onDestroyView() {
@@ -45,15 +45,17 @@ class FragmentLista : Fragment() {
         _binding = null
     }
 
-    private fun configureRecyclerView(){
-        Log.d("configureRecyclerView()","${viewModel.exposeItems().size}")
-        recyclerView.layoutManager  = LinearLayoutManager(activity)
-        recyclerView.adapter        = RecyclerAdapter(viewModel.exposeItems()){position -> onListItemClick(position)}
+    private fun configureRecyclerView() {
+        Log.d("configureRecyclerView()", "${viewModel.exposeItems().size}")
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+        recyclerView.adapter =
+            RecyclerAdapter(viewModel.exposeItems()) { position -> onListItemClick(position) }
         recyclerView.addItemDecoration(
-            DividerItemDecoration(activity,DividerItemDecoration.VERTICAL))
+            DividerItemDecoration(activity, DividerItemDecoration.VERTICAL)
+        )
     }
 
-    private fun onListItemClick(position:Int){
+    private fun onListItemClick(position: Int) {
         viewModel.delItem(viewModel.exposeItems()[position])
     }
 }

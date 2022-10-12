@@ -68,7 +68,7 @@ class FragmentSobre : Fragment() {
         _binding = null
     }
 
-    fun Fragment.makeToast(text: String,duration: Int = Toast.LENGTH_LONG) {
+    fun Fragment.makeToast(text: String, duration: Int = Toast.LENGTH_LONG) {
         activity?.let {
             Toast.makeText(it, text, duration).show()
         }
